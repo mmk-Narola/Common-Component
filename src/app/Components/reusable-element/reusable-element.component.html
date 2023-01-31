@@ -41,52 +41,15 @@
         </button>
       </form>
     </div>
+    <div class="col-sm-4">
+      {{ form.value | json }}
+    </div>
   </div>
-
   <div class="row2">
     <app-table [data]="data" [columns]="columns"></app-table>
     <div class="row3">
       {{ form.value | json }}
     </div>
   </div>
+  <app-table [data]="data" [columns]="columns"></app-table>
 </div> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <h1 class="navbar-brand" routerLink="/">Reusable Form Component</h1>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="#navbarNav">
-      <div class="navlink">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" routerLink="method1">Method1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="method2">Method2</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="reusable-form">
-              ReusableForm
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="dynamicForm">
-              DynamicForm
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>

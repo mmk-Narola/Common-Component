@@ -1,0 +1,93 @@
+<div class="container">
+  <h3 class="text-center mt-4">Dynamic Add Form Control Form Component</h3>
+  <div class="col-sm-12">
+    <form [formGroup]="myFormGroup" (ngSubmit)="ngSubmit()">
+      <div *ngFor="let form_elem of formField">
+        <div [ngSwitch]="form_elem.type">
+          <div *ngSwitchCase="'input'">
+            <app-input-field
+              [type]="form_elem.fieldType"
+              [label]="form_elem.label"
+              [formGroup]="myFormGroup"
+              [control]="form_elem.name"
+            >
+            </app-input-field>
+          </div>
+
+          <div *ngSwitchCase="'textarea'">
+            <div class="row mb-1">
+              <label class="col-sm-2 col-form-label"
+                >{{ form_elem.label }}:
+              </label>
+              <div class="col-sm-6">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  [formControlName]="form_elem.name"
+                >
+                </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'radio'">
+            <div class="row mb-1">
+              <label class="col-sm-2 col-form-label">
+                {{ form_elem.label }}
+              </label>
+              <div *ngFor="let option of form_elem.options">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  [value]="option.value"
+                  [formControlName]="form_elem.name"
+                />
+                {{ option.label }}
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'select'">
+            <div class="row mb-1">
+              <label class="col-sm-2 col-form-label">
+                {{ form_elem.label }}
+              </label>
+
+              <div class="col-sm-6">
+                <select class="form-control" [formControlName]="form_elem.name">
+                  <option value="">Select Option</option>
+                  <option
+                    *ngFor="let option of form_elem.option.countries"
+                    [value]="option.key"
+                  >
+                    {{ option.value }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'checkbox'">
+            <input
+              [type]="form_elem.fieldType"
+              [formControlName]="form_elem.name"
+              class="form-check-input"
+            />
+            <label for="acceptTerms" class="form-check-label">
+              {{ form_elem.label }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="myFormGroup.invalid"
+        class="btn btn-success col-2 mt-2"
+      >
+        Submit
+      </button>
+    </form>
+
+    {{ myFormGroup.value | json }}
+  </div>
+</div>

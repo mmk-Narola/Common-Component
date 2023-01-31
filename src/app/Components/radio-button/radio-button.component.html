@@ -1,0 +1,15 @@
+<div class="form-check radio">
+  <div class="row">
+    <div class="col-sm-10">
+      <form [formGroup]="formGroup">
+        <input
+          class="form-check-input"
+          type="radio"
+          [value]="value"
+          [formControlName]="control"
+        />
+        <label class="form-check-label">{{ label }}</label>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<!-- <div class="container">
+  <div class="row">
+    <h3 class="text-center mt-4">Reusable Form Component Method-2</h3>
+    <form [formGroup]="form">
+      <div class="col-sm-10">
+        <app-input-field
+          [type]="'text'"
+          [control]="form.controls['name']"
+          [placeholder]="'Enter Name'"
+          [label]="'Name'"
+          [required]="true"
+        >
+        </app-input-field>
+        <app-input-field
+          [type]="'email'"
+          [control]="form.controls['email']"
+          [placeholder]="'Enter Email'"
+          [label]="'Email'"
+          [required]="true"
+        >
+        </app-input-field>
+        <app-input-field
+          [type]="'password'"
+          [control]="form.controls['password']"
+          [placeholder]="'Enter Password'"
+          [label]="'Password'"
+          [required]="true"
+        >
+        </app-input-field>
+        <app-input-field
+          [type]="'date'"
+          [control]="form.controls['age']"
+          [label]="'DOB'"
+          [required]="true"
+        >
+        </app-input-field>
+        <app-input-field
+          [type]="'number'"
+          [control]="form.controls['mobile']"
+          [placeholder]="'Enter Mobile'"
+          [label]="'Mobile'"
+          [required]="true"
+        >
+        </app-input-field>
+
+        <app-radio-button
+          [control]="form.controls['gender']"
+          value="'male'"
+          label="Male"
+        >
+        </app-radio-button>
+        <app-radio-button
+          [control]="form.controls['gender']"
+          value="'female'"
+          label="Female"
+        >
+        </app-radio-button>
+
+        <app-select-option
+          [control]="form.controls['select']"
+          [options]="options"
+          [label]="'Select an option'"
+          [required]="true"
+        >
+        </app-select-option>
+
+        <app-checbox
+          [control]="form.controls['checkbox']"
+          [label]="'Agree to terms and conditions'"
+          [required]="true"
+        >
+        </app-checbox>
+
+        <br />
+
+        <app-form-array [arrayItems]="form.controls['note']"> </app-form-array>
+        <app-form-array formArrayName="names"></app-form-array>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-success col-sm-5 mt-2"
+        (click)="Submit()"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div> -->

@@ -1,0 +1,14 @@
+<div [formGroup]="group">
+  <div
+    *ngFor="let control of arrayItems.controls; let i = index"
+    class="fa-btn mb-2"
+  >
+    <input [formControlName]="i" placeholder="Note..." class="form-control" />
+    <button class="btn btn-danger" (click)="Remove(i)">
+      <i class="bi bi-patch-minus-fill"></i>
+    </button>
+  </div>
+  <button (click)="addControl()" class="btn btn-primary">
+    Add Note <i class="bi bi-plus-circle-fill"></i>
+  </button>
+</div>
