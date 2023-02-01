@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <section [formGroup]="form">
+        <!-- <label [attr.for]="field.key">{{ field.label }}</label> -->
+        <div class="row mb-1">
+          <label class="col-sm-2 col-form-label">{{ field.label }}: </label>
+          <div class="col-sm-4">
+            <div [ngSwitch]="field.controlType">
+              <div *ngSwitchCase="'textbox'">
+                <input
+                  [type]="field.type"
+                  [id]="field.key"
+                  [formControlName]="field.key"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        *ngIf="form.get(field.key).touched && form.get(field.key).errors?.['required']"
+        class="text-danger"
+      >
+        This Field is Required
+      </div>
+      <div
+        *ngIf="
+          form.get(field.key).invalid && form.get(field.key).errors?.['email']
+        "
+        class="text-danger"
+      >
+        please email 'abc@gmail.com'
+      </div>
+      <div
+        *ngIf="form.get(field.key).errors?.['minlength']"
+        class="text-danger"
+      >
+        Please Enter 6 Character
+      </div>
+
+      <!-- <section class="errorMessage" *ngIf="hasFieldError()" class="text-danger">
+        {{ field.label }} is required
+      </section> -->
+    </div>
+  </div>
+</div>

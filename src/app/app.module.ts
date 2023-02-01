@@ -15,6 +15,9 @@ import { InfoComponent } from './Components/info/info.component';
 import { FormArrayComponent } from './Components/form-array/form-array.component';
 import { ReusableFormComponent } from './Components/reusable-form/reusable-form.component';
 import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.component';
+import { DynamicformControlsComponent } from './dynamicForms/dynamicform-controls/dynamicform-controls.component';
+import { DynamicFormInputsComponent } from './dynamicForms/dynamic-form-inputs/dynamic-form-inputs.component';
+import { DisplayFormControlComponent } from './dynamicForms/display-form-control/display-form-control.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.com
     FormArrayComponent,
     ReusableFormComponent,
     DynamicFormComponent,
+    DynamicformControlsComponent,
+    DynamicFormInputsComponent,
+    DisplayFormControlComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
