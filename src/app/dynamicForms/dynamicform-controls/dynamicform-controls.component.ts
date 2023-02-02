@@ -26,7 +26,7 @@ export class DynamicformControlsComponent implements OnInit {
           ])
         : new FormControl(field.value || '', field.validators);
     });
-
+    console.log('Group', group);
     this.formGrp = new FormGroup(group);
   }
 

@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
       <section [formGroup]="form">
         <!-- <label [attr.for]="field.key">{{ field.label }}</label> -->
         <div class="row mb-1">
-          <label class="col-sm-2 col-form-label">{{ field.label }}: </label>
-          <div class="col-sm-4">
+          <label class="col-sm-2 col-form-label">{{ field.label }} </label>
+          <div class="col-sm-6">
             <div [ngSwitch]="field.controlType">
               <div *ngSwitchCase="'textbox'">
                 <input
@@ -15,7 +15,55 @@
                   class="form-control"
                 />
               </div>
+
+              <div *ngSwitchCase="'radio'" class="mt-2">
+                <div class="radioBtn">
+                  <div *ngFor="let opt of field.options">
+                    <input
+                      type="radio"
+                      [id]="field.key"
+                      [name]="field.key"
+                      [value]="opt.key"
+                      [formControlName]="field.key"
+                      class="form-check-input"
+                    />
+                    {{ opt.value }}&nbsp;
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'textarea'">
+                <textarea
+                  [id]="field.key"
+                  class="form-control"
+                  [formControlName]="field.key"
+                >
+                </textarea>
+              </div>
+
+              <div *ngSwitchCase="'select'">
+                <select
+                  [name]="field.key"
+                  [id]="field.key"
+                  [formControlName]="field.key"
+                  class="form-control"
+                >
+                  <option value="">Select State</option>
+                  <option *ngFor="let item of field.options" [value]="item.key">
+                    {{ item.value }}
+                  </option>
+                </select>
+              </div>
             </div>
+          </div>
+          <div *ngIf="field.controlType === 'checkbox'">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [id]="field.key"
+              [name]="field.key"
+              [formControlName]="field.key"
+            />&nbsp; {{ field.value }}
           </div>
         </div>
       </section>
@@ -26,14 +74,14 @@
       >
         This Field is Required
       </div>
+
       <div
-        *ngIf="
-          form.get(field.key).invalid && form.get(field.key).errors?.['email']
-        "
+        *ngIf="form.get(field.key).invalid && form.get(field.key).errors?.['email']"
         class="text-danger"
       >
         please email 'abc@gmail.com'
       </div>
+
       <div
         *ngIf="form.get(field.key).errors?.['minlength']"
         class="text-danger"
@@ -41,9 +89,12 @@
         Please Enter 6 Character
       </div>
 
-      <!-- <section class="errorMessage" *ngIf="hasFieldError()" class="text-danger">
-        {{ field.label }} is required
-      </section> -->
+      <div
+        *ngIf="form.get(field.key).errors?.['maxlength']"
+        class="text-danger"
+      >
+        Zip Code Required Max 3 Character
+      </div>
     </div>
   </div>
 </div>
