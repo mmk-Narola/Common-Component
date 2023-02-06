@@ -5,14 +5,14 @@ import { ReusableElementComponent } from './Components/reusable-element/reusable
 import { InfoComponent } from './Components/info/info.component';
 import { ReusableFormComponent } from './Components/reusable-form/reusable-form.component';
 import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.component';
-import { DisplayFormControlComponent } from './dynamicForms/display-form-control/display-form-control.component';
+import { DisplayFormControlComponent } from './dynamicForms-Controls/display-form-control/display-form-control.component';
 
 const routes: Routes = [
   { path: '', component: InfoComponent },
-  { path: 'method1', component: ReusableElementComponent },
-  { path: 'method2', component: DifferentUseComponent },
+  // { path: 'method1', component: ReusableElementComponent },
+  // { path: 'method2', component: DifferentUseComponent },
   { path: 'reusable-form', component: ReusableFormComponent },
-  { path: 'dynamicForm', component: DynamicFormComponent },
+  { path: 'dynamicForm-field', component: DynamicFormComponent },
   { path: 'dynamicForm-control', component: DisplayFormControlComponent },
 ];
 

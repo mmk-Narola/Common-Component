@@ -12,8 +12,10 @@ export class DynamicFormInputsComponent implements OnInit {
   @Input() form: FormGroup;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.field);
+  ngOnInit(): void {}
+
+  get fControls() {
+    return this.form as FormGroup;
   }
 
   hasFieldError(): boolean {

@@ -15,9 +15,13 @@ import { InfoComponent } from './Components/info/info.component';
 import { FormArrayComponent } from './Components/form-array/form-array.component';
 import { ReusableFormComponent } from './Components/reusable-form/reusable-form.component';
 import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.component';
-import { DynamicformControlsComponent } from './dynamicForms/dynamicform-controls/dynamicform-controls.component';
-import { DynamicFormInputsComponent } from './dynamicForms/dynamic-form-inputs/dynamic-form-inputs.component';
-import { DisplayFormControlComponent } from './dynamicForms/display-form-control/display-form-control.component';
+// import { DynamicformFieldModule } from './Components/dynamicform-field.module';
+import { DynamicformControlsComponent } from './dynamicForms-Controls/dynamicform-controls/dynamicform-controls.component';
+import { DynamicFormInputsComponent } from './dynamicForms-Controls/dynamic-form-inputs/dynamic-form-inputs.component';
+import { DisplayFormControlComponent } from './dynamicForms-Controls/display-form-control/display-form-control.component';
+// import { DynamicformControlsComponent } from './dynamicForms/dynamicform-controls/dynamicform-controls.component';
+// import { DynamicFormInputsComponent } from './dynamicForms/dynamic-form-inputs/dynamic-form-inputs.component';
+// import { DisplayFormControlComponent } from './dynamicForms/display-form-control/display-form-control.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +31,15 @@ import { DisplayFormControlComponent } from './dynamicForms/display-form-control
     SelectOptionComponent,
     ChecboxComponent,
     TableComponent,
+    FormArrayComponent,
     DifferentUseComponent,
     ReusableElementComponent,
     InfoComponent,
-    FormArrayComponent,
     ReusableFormComponent,
-    DynamicFormComponent,
     DynamicformControlsComponent,
     DynamicFormInputsComponent,
     DisplayFormControlComponent,
+    DynamicFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

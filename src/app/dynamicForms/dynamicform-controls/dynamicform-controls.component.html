@@ -1,9 +1,0 @@
-<form [formGroup]="formGrp" (ngSubmit)="onSubmit()">
-  <section *ngFor="let field of formFields" class="form-row">
-    <app-dynamic-form-inputs [field]="field" [form]="formGrp">
-    </app-dynamic-form-inputs>
-  </section>
-  <button type="submit" class="btn btn-outline-success col-8 mt-2">
-    Submit
-  </button>
-</form>
