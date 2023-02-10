@@ -89,7 +89,7 @@ export class DisplayFormControlComponent implements OnInit {
     new CheckBox({
       key: 'terms',
       value: 'Agree to terms',
-      validators: [Validators.requiredTrue],
+      required: true,
     }),
   ];
 

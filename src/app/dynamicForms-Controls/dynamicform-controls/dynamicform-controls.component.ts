@@ -22,7 +22,7 @@ export class DynamicformControlsComponent implements OnInit {
   }
 
   private toFormGroup(): void {
-    //Method-2
+    //Method-1
     const group = {};
     this.formFields.forEach((field) => {
       group[field.key] = field.required

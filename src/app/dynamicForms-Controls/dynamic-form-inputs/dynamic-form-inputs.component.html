@@ -54,9 +54,18 @@
                   </option>
                 </select>
               </div>
+              <div *ngSwitchCase="'checkbox'">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [id]="field.key"
+                  [name]="field.key"
+                  [formControlName]="field.key"
+                />&nbsp; {{ field.value }}
+              </div>
             </div>
           </div>
-          <div *ngIf="field.controlType === 'checkbox'">
+          <!-- <div *ngIf="field.controlType === 'checkbox'">
             <input
               class="form-check-input"
               type="checkbox"
@@ -64,7 +73,7 @@
               [name]="field.key"
               [formControlName]="field.key"
             />&nbsp; {{ field.value }}
-          </div>
+          </div> -->
         </div>
       </section>
 
