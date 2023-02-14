@@ -26,11 +26,8 @@ export class DynamicformControlsComponent implements OnInit {
     const group = {};
     this.formFields.forEach((field) => {
       group[field.key] = field.required
-        ? new FormControl(field.value || '', [
-            ...field.validators,
-            Validators.required,
-          ])
-        : new FormControl(field.value || '', field.validators);
+        ? new FormControl('', [...field.validators, Validators.required])
+        : new FormControl('', field.validators);
     });
     this.formGrp = new FormGroup(group);
 
@@ -52,3 +49,14 @@ export class DynamicformControlsComponent implements OnInit {
     this.formGrp.reset();
   }
 }
+
+// const group = {};
+// this.formFields.forEach((field) => {
+//   group[field.key] = field.required
+//     ? new FormControl(field.value || '', [
+//         ...field.validators,
+//         Validators.required,
+//       ])
+//     : new FormControl(field.value || '', field.validators);
+// });
+// this.formGrp = new FormGroup(group);
