@@ -19,6 +19,8 @@ import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.com
 import { DynamicformControlsComponent } from './dynamicForms-Controls/dynamicform-controls/dynamicform-controls.component';
 import { DynamicFormInputsComponent } from './dynamicForms-Controls/dynamic-form-inputs/dynamic-form-inputs.component';
 import { DisplayFormControlComponent } from './dynamicForms-Controls/display-form-control/display-form-control.component';
+import { BuildingformComponent } from './BuildingDynamicForm/buildingform/buildingform.component';
+// import { BuildingformComponent } from '';
 // import { DynamicformControlsComponent } from './dynamicForms/dynamicform-controls/dynamicform-controls.component';
 // import { DynamicFormInputsComponent } from './dynamicForms/dynamic-form-inputs/dynamic-form-inputs.component';
 // import { DisplayFormControlComponent } from './dynamicForms/display-form-control/display-form-control.component';
@@ -40,6 +42,7 @@ import { DisplayFormControlComponent } from './dynamicForms-Controls/display-for
     DynamicFormInputsComponent,
     DisplayFormControlComponent,
     DynamicFormComponent,
+    BuildingformComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

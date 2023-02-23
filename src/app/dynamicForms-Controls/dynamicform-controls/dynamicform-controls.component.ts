@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormInputBase } from '../Model/form-input-base';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -31,24 +32,25 @@ export class DynamicformControlsComponent implements OnInit {
     });
     this.formGrp = new FormGroup(group);
 
-    //Method-2
-    // this.formGrp = this.formBuilder.group({});
-    // this.formFields.forEach((formTemplate) => {
-    //   this.formGrp.addControl(
-    //     formTemplate.key,
-    //     new FormControl('', formTemplate.validators)
-    //   );
-    // });
+    console.log(this.formGrp);
   }
 
   onSubmit(): void {
     this.formGrp.markAllAsTouched();
     if (this.formGrp.invalid) return;
-    alert('Submit formGrp!');
     console.log(this.formGrp.value);
     this.formGrp.reset();
   }
 }
+
+//Method-2
+// this.formGrp = this.formBuilder.group({});
+// this.formFields.forEach((formTemplate) => {
+//   this.formGrp.addControl(
+//     formTemplate.key,
+//     new FormControl('', formTemplate.validators)
+//   );
+// });
 
 // const group = {};
 // this.formFields.forEach((field) => {

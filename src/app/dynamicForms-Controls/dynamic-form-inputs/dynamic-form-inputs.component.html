@@ -55,55 +55,96 @@
                 </select>
               </div>
               <div *ngSwitchCase="'checkbox'">
-                <input
+                <div *ngFor="let opt of field.options">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      [value]="opt.key"
+                      [formControlName]="field.key"
+                      (change)="onChange($event)"
+                    />
+                    {{ opt.value }}
+                  </label>
+                </div>
+
+                <!-- <input
                   class="form-check-input"
                   type="checkbox"
                   [id]="field.key"
                   [name]="field.key"
                   [formControlName]="field.key"
-                />&nbsp; {{ field.value }}
+                />&nbsp; {{ field.value }} -->
               </div>
             </div>
+
+            <!-- <div
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+              *ngIf="form?.get(field.key)?.touched && form.get(field.key).errors?.['required']"
+            >
+              {{ field.label }} is required
+            </div> -->
+            <div
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+              *ngIf="
+                form?.get(field.key)?.invalid && form?.get(field.key)?.dirty
+              "
+            >
+              {{ field.label }} is required
+            </div>
+
+            <div
+              *ngIf=" form.get(field.key).errors?.['email']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              please email 'abc@gmail.com'
+            </div>
+
+            <div
+              *ngIf="form.get(field.key).errors?.['minlength']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              Please Enter 6 Character
+            </div>
+
+            <div
+              *ngIf="form.get(field.key).errors?.['maxlength']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              Zip Code Required Max 3 Character
+            </div>
           </div>
-          <!-- <div *ngIf="field.controlType === 'checkbox'">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              [id]="field.key"
-              [name]="field.key"
-              [formControlName]="field.key"
-            />&nbsp; {{ field.value }}
-          </div> -->
         </div>
       </section>
+    </div>
+  </div>
+</div>
 
-      <div
+<!-- <div
         *ngIf="form.get(field.key).touched && form.get(field.key).errors?.['required']"
         class="text-danger"
       >
         This Field is Required
-      </div>
-
+      </div> -->
+<!-- 
       <div
         *ngIf="form.get(field.key).invalid && form.get(field.key).errors?.['email']"
         class="text-danger"
       >
         please email 'abc@gmail.com'
-      </div>
+      </div> -->
 
-      <div
+<!-- <div
         *ngIf="form.get(field.key).errors?.['minlength']"
         class="text-danger"
       >
         Please Enter 6 Character
-      </div>
+      </div> -->
 
-      <div
+<!-- <div
         *ngIf="form.get(field.key).errors?.['maxlength']"
         class="text-danger"
       >
         Zip Code Required Max 3 Character
-      </div>
-    </div>
-  </div>
-</div>
+      </div> -->

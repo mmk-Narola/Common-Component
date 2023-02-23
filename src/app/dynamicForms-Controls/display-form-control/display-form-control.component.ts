@@ -87,10 +87,20 @@ export class DisplayFormControlComponent implements OnInit {
     }),
 
     new CheckBox({
-      key: 'terms',
-      value: 'Agree to terms',
+      key: 'hobby',
+      label: 'Hobby',
       required: true,
+      options: [
+        { key: 'fishing', value: 'Fishing' },
+        { key: 'cooking', value: 'Cooking' },
+      ],
     }),
+
+    // new CheckBox({
+    //   key: 'terms',
+    //   value: 'Agree to terms',
+    //   required: true,
+    // }),
   ];
 
   constructor() {}

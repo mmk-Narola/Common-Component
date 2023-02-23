@@ -1,0 +1,43 @@
+<div class="container">
+  <h3 class="text-center mt-2">Generate form by User</h3>
+  <form [formGroup]="generateForm" (ngSubmit)="ngSubmit()">
+    <div class="row">
+      <div class="col-sm-4">
+        <input
+          type="text"
+          name="name"
+          class="form-control mb-2"
+          formControlName="name"
+          placeholder="Enter Field Name"
+        />
+
+        <input
+          type="text"
+          name="label"
+          class="form-control mb-2"
+          formControlName="label"
+          placeholder="Enter Field Label"
+        />
+
+        <input
+          type="text"
+          name="type"
+          class="form-control mb-2"
+          formControlName="type"
+          placeholder="Enter Field type"
+        />
+
+        <input
+          type="text"
+          name="controlType"
+          class="form-control mb-2"
+          formControlName="controlType"
+          placeholder="Enter Field Control Type"
+        />
+
+        <button class="btn btn-outline-dark" type="submit">Generate</button>
+      </div>
+      <div class="col-sm-4">{{ generateForm.value | json }}</div>
+    </div>
+  </form>
+</div>

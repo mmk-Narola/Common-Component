@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { formFieldData } from 'src/app/BuildingDynamicForm/fieldsData';
 import { formField } from 'src/app/data/data';
 
 @Component({
@@ -12,7 +13,9 @@ export class ReusableFormComponent implements OnInit {
   formGroup: FormGroup;
   note: any;
 
-  constructor() {}
+  constructor() {
+    console.log(formFieldData);
+  }
 
   ngOnInit(): void {
     let group = {};
